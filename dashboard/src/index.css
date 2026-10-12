@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900;
+  }
+}
+
+.table-row-hover:hover {
+  @apply bg-slate-50 cursor-pointer;
+}
+
+.btn {
+  @apply inline-flex items-center px-4 py-2 border rounded-md font-medium transition-all duration-200 active:scale-95;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white border-transparent hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-white text-slate-700 border-slate-300 hover:bg-slate-50;
+}
+
+.btn-danger {
+  @apply bg-white text-red-600 border-red-200 hover:bg-red-50;
+}
+
+.status-badge {
+  @apply px-2 py-0.5 rounded-full text-xs font-semibold uppercase;
+}
+
+.status-waiting { @apply bg-amber-100 text-amber-700; }
+.status-active { @apply bg-blue-100 text-blue-700; }
+.status-completed { @apply bg-emerald-100 text-emerald-700; }
+.status-failed { @apply bg-rose-100 text-rose-700; }
+.status-cancelled { @apply bg-slate-100 text-slate-700; }

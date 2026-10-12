@@ -1,0 +1,55 @@
+{
+  "name": "distributed-queue-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "server": "ts-node --transpile-only src/server.ts",
+    "dashboard": "npm run dev --prefix dashboard",
+    "dev:all": "concurrently \"npm run server\" \"npm run dashboard\"",
+    "build": "tsc",
+    "test": "jest",
+    "test:redis": "ts-node tests/redis-test.ts",
+    "test:structures": "ts-node tests/redis-structures.ts",
+    "load-test": "ts-node -r dotenv/config scripts/loadTest.ts",
+    "test:idempotency": "ts-node -r dotenv/config tests/idempotency.test.ts",
+    "test:graceful-shutdown": "ts-node -r dotenv/config tests/gracefulShutdown.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhanushkumar-amk/Distributed-Queue-Engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhanushkumar-amk/Distributed-Queue-Engine/issues"
+  },
+  "homepage": "https://github.com/dhanushkumar-amk/Distributed-Queue-Engine#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.5.0",
+    "concurrently": "^9.2.1",
+    "jest": "^30.3.0",
+    "nodemon": "^3.1.14",
+    "testcontainers": "^11.13.0",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/socket.io": "^3.0.1",
+    "@types/uuid": "^10.0.0",
+    "cron-parser": "^5.5.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "ioredis": "^5.10.1",
+    "socket.io": "^4.8.3",
+    "uuid": "^13.0.0"
+  }
+}
