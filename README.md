@@ -357,9 +357,7 @@ Please make sure `npm test` passes before submitting. For large features, open a
 
 ---
 
-## 📄 License
 
-MIT © [dhanushkumar-amk](https://github.com/dhanushkumar-amk)
 
 ---
 
