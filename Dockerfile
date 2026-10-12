@@ -2,7 +2,8 @@
 FROM node:20-alpine AS dashboard-builder
 WORKDIR /app/dashboard
 COPY dashboard/package*.json ./
-RUN npm ci --legacy-peer-deps
+RUN npm ci --omit=dev --legacy-peer-deps --fetch-retries=5 --fetch-timeout=300000
+
 COPY dashboard/ ./
 RUN npm run build
 
